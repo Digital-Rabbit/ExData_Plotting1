@@ -10,13 +10,12 @@ plot3 <- function ( ) {
     smallPowerData <- subset(smallPowerData, subset=(Date > "2007-01-31"))
     ## Energy submetering on the y and Thur, Fri, Sat on x, with submetering_1
     ## submetering_2 and submetering_3 separately plotted and in a legend
-    with(smallPowerData,plot(smallPowerData$Sub_metering_1,smallPowerData$Sub_metering_2,smallPowerData$Sub_metering_3)
-         plot(smallPowerData$Sub_metering_1,type="l")
-         plot(smallPowerData$Sub_metering_2,type="l",col="blue")
-         plot(smallPowerData$Sub_metering_3,type="l",col="red",ylab="Energy sub metering",xlab="")
+    plot(smallPowerData$Sub_metering_1,type="l",xlab = "",axes = FALSE)
+    lines(smallPowerData$Sub_metering_2,col="blue",xlab = "")
+    lines(smallPowerData$Sub_metering_3,col="red",ylab="Energy sub metering",xlab = "")
     ## Legend
     ## Sub_metering_1, Sub_metering_2 (red), Sub_metering_3 (blue)
-    legend("topright", pch = 1, col = c(“blue”,”red), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch=1)
+    legend("topright", col = c("black","blue","red"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch=1)
          
     ## Copy plot to png
     dev.copy(png, file = "plot3.png")

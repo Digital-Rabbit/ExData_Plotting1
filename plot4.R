@@ -1,6 +1,6 @@
 plot4 <- function ( ) {
     ## Set to the correct working directory
-    setwd("~/Desktop/Exploratory Data Analysis/Project 1")
+    ## setwd("~/Desktop/Exploratory Data Analysis/Project 1")
     ## Read household_power_consumption.txt data
     powerData <- read.csv("household_power_consumption.txt",header=TRUE,sep=";",na.strings = "?", colClasses = "character")
     ## Clean up data, by fixing data and time format and subsetting only the dates to analyze
